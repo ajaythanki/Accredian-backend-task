@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Verification</title>
+</head>
+
+<body>
+      <table role="presentation"
+        style="width: 100%; border-collapse: collapse; border: 0px; border-spacing: 0px; font-family: Arial, Helvetica, sans-serif; background-color: rgb(239, 239, 239);">
+        <tbody>
+          <tr>
+            <td align="center" style="padding: 1rem 2rem; vertical-align: top; width: 100%;">
+              <table role="presentation"
+                style="max-width: 600px; border-collapse: collapse; border: 0px; border-spacing: 0px; text-align: left;">
+                <tbody>
+                  <tr>
+                    <td style="padding: 40px">
+                      <div style="text-align: center;">
+                        <h1 style="padding-bottom: 10px; font-weight: bold; color: steelblue;">Accredian</h1>
+                      </div>
+                      <div style="padding: 20px; background-color: rgb(255, 255, 255);">
+                        <div style="color: rgb(0, 0, 0); text-align: center;">
+                          <h2 style="margin: 1rem 0">Verification code</h2>
+                          <p style="padding-bottom: 16px">Welcome <%= user.username %>.</p>
+                          <p style="padding-bottom: 16px">Thanks for signing up <span style="display: inline; font-weight: bold; color: steelblue;">Accredian</span> use the verification code below to complete sign up process.</p>
+                          <p style="padding-bottom: 16px">Please use the verification code below to sign up. Valid for 5 Minutes.</p>
+                          <p style="padding-bottom: 16px;"><strong style="font-size: 180%; font-weight: bold; color: steelblue;"><%= verificationCode %></strong></p>
+                          <p style="padding-bottom: 16px">If you didn’t request this, you can ignore this email.</p>
+                          <p style="padding-bottom: 16px">Thanks,<br>The Accredian team</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</body>
+
+</html>
