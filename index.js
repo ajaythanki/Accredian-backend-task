@@ -5,7 +5,6 @@ const logger = require("./utils/logger");
 const express = require("express");
 const cors = require("cors");
 const authRouter = require("./routes/auth");
-const { isAuth, verifyToken } = require("./utils/middleware");
 const cookieParser = require("cookie-parser");
 const conn = require("./db/dbConfig");
 
