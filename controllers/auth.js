@@ -1,6 +1,5 @@
 const jwt = require("jsonwebtoken");
 const config = require("../utils/config");
-const userQueries = require("../db/userQueries");
 const bcrypt = require("bcrypt");
 const ErrorHandler = require("../utils/ErrorHandler");
 const { asyncHandler } = require("../utils/middleware");
