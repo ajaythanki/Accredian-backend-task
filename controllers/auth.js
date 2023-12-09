@@ -37,7 +37,7 @@ const login = asyncHandler(async (req, res, next) => {
         }
         res.clearCookie(COOKIE_NAME, {
           httpOnly: true,
-          domain: "localhost",
+          domain: config.ORIGIN,
           signed: true,
           path: "/",
         });
@@ -51,7 +51,7 @@ const login = asyncHandler(async (req, res, next) => {
         // Send a success message, token and the logged user as a response
         res.cookie(COOKIE_NAME, token, {
           path: "/",
-          domain: "localhost",
+          domain: config.ORIGIN,
           // days * hours * minutes * seconds * milliseconds
           maxAge: 7 * 24 * 60 * 60 * 1000,
           httpOnly: true,
@@ -75,7 +75,7 @@ const logout = asyncHandler(async (req, res, next) => {
   try {
       res.clearCookie(COOKIE_NAME, {
         httpOnly: true,
-        domain: "localhost",
+        domain: config.ORIGIN,
         signed: true,
         path: "/",
       });
@@ -114,7 +114,7 @@ const signUp = asyncHandler(async (req, res, next) => {
       const user = req.body;
       res.clearCookie(COOKIE_NAME, {
         httpOnly: true,
-        domain: "localhost",
+        domain: config.ORIGIN,
         signed: true,
         path: "/",
       });
@@ -137,7 +137,7 @@ const signUp = asyncHandler(async (req, res, next) => {
 
         res.cookie(COOKIE_NAME, token, {
           path: "/",
-          domain: "localhost",
+          domain: config.ORIGIN,
           // minutes * seconds * milliseconds
           maxAge: 10 * 60 * 1000, //10 minutes
 
