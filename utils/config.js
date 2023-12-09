@@ -11,6 +11,7 @@ const ORIGIN = process.env.ORIGIN;
 
 const SECRET = process.env.SECRET;
 const COOKIE_SECRET = process.env.COOKIE_SECRET;
+const COOKIE_DOMAIN = process.env.COOKIE_DOMAIN;
 
 const VERIFICATION_SECRET = process.env.VERIFICATION_SECRET;
 const SMTP_HOST = process.env.SMTP_HOST;
@@ -28,6 +29,7 @@ module.exports = {
   SECRET,
   VERIFICATION_SECRET,
   COOKIE_SECRET,
+  COOKIE_DOMAIN,
   ORIGIN,
   SMTP_HOST,
   SMTP_PORT,
