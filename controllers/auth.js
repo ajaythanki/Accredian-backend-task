@@ -28,13 +28,11 @@ const login = asyncHandler(async (req, res, next) => {
         if(err) throw err;
         
         const user = result[0];
-        console.log("user", user);
 
         const isCorrectPassword = user
           ? await bcrypt.compare(password, user.password)
           : false;
         
-        console.log(isCorrectPassword);
         if (!(user && isCorrectPassword)) {
           return next(new ErrorHandler("Invalid username or password", 400));
         }
@@ -199,13 +197,11 @@ const verifyProfile = asyncHandler(async (req, res, next) => {
         },
         (err, results) => {
           if (!err) {
-            console.log("results", results);
 
             // Return a response to indicate that the profile has been verified
             let sql = "SELECT id,email,isVerified FROM users WHERE email=?";
             conn.query(sql, [email], (err, result) => {
               if (err) throw err;
-              console.log(result);
               // Send a success message to the client
               res.status(200).json({
                 success: true,
@@ -214,7 +210,7 @@ const verifyProfile = asyncHandler(async (req, res, next) => {
               });
             });
           } else {
-            console.log(err);
+            logger.error(err);
           }
         }
       );
